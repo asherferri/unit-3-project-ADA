@@ -15,7 +15,7 @@ or needs to refill based on estimated consumption times (added by user).
 
 ### Wireframes!
 
-![Wireframe](./wireframes/wireframes.png)
+![Wireframe](./resources/wireframe.png)
 
 ### User Stories
 
@@ -28,6 +28,7 @@ or needs to refill based on estimated consumption times (added by user).
   
 ### Database Schema
 
+![DB_SCHMA](./resources/database_schema.png)
 
 ### 3rd Party Technologies
 
