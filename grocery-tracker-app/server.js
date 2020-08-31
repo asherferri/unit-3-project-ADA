@@ -10,7 +10,7 @@ const passport = require('passport')
 const moment = require('moment')
 
 //trackedGroceriesRouter
-const trackedGroceriesRouter = require('./routes/tracked-groceries-router')
+const groceriesRouter = require('./routes/groceries-router')
 // // UNCOMENT THIS NEXT LINES AS PROGRESS REQUIRES
 // //authRouter
 // const authRouter = require('./routes/auth-router')
@@ -62,7 +62,7 @@ app.get('/', (req, res) => {
 // //add use to userRoute
 // app.use('/user', userRouter)
 //add use to route
-//app.use('/tgroceries', trackedGroceriesRouter)
+app.use('/groceries', groceriesRouter)
 
 
 app.use('*', (req, res) => {

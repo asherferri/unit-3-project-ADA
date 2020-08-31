@@ -1,7 +1,7 @@
-CREATE TABLE IF NOT EXISTS tracked_groceries (
+CREATE TABLE IF NOT EXISTS groceries (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    recurrance INTEGER, 
+    recurrence INTEGER, 
     last_purchased_date date,
     user_id INTEGER NOT NULL FOREIGN KEY REFERENCES users(id)
 );
