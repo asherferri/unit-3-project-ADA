@@ -22,7 +22,8 @@ class Groceries {
         // )
 
         return db.manyOrNone(
-            `SELECT * FROM groceries WHERE user_id = 1;`
+            `SELECT * FROM groceries WHERE user_id = $1;`, 
+            id
         )
         .then(groceries => {
             prettyLog(
@@ -51,6 +52,42 @@ class Groceries {
                 return userGrocery
             })
         })
+    }
+
+    static getById(id) {
+      return db.oneOrNone(
+        'SELECT * FROM groceries WHERE id = $1', 
+        id
+      )
+      .then(grocery => {
+        prettyLog(
+          "DB object returned from getById(id) in groceries-model.js",
+          grocery
+        );
+        
+        if(grocery) {
+          const foundGrocery = new this(grocery);
+          prettyLog(
+            "DB object -> Grocery object in getById(id) in groceries-model.js (before moment.js)",
+            foundGrocery
+          )
+
+          const lastPurchasedDate = moment(grocery.last_purchased_date);
+          const readablelastPurchasedDate = lastPurchasedDate.format(
+            "dddd, MMMM Do, YYYY"
+          );
+          foundGrocery.lastPurchasedDate = readablelastPurchasedDate;
+          prettyLog(
+            "DB -> Grocery object in getById(id) in groceries-model.js (after momnent.js)",
+            foundGrocery
+          );
+
+          return foundGrocery;
+        }
+        else {
+          throw new Error('No entry found')
+        }
+      })
     }
 }
 

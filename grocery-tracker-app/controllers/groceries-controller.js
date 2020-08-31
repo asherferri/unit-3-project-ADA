@@ -11,16 +11,32 @@ const groceriesController = {
           .then(groceries => {
             prettyLog(
               "groceries from getAllUserGroceries(id) in groceriesController.index",
-              groceries.length
+              groceries
             )
 
             res.json({
               message: "ok",
-              data: { groceries },
+              data: { groceries }
             });
           })
           .catch(next);
-        }
+      },
+
+      show: (req, res, next) => {
+        console.log('show activated')
+        Groceries.getById(req.params.id)
+          .then(grocery => {
+            prettyLog(
+              "grocery from getById(id) in groceriesController.show",
+              grocery)
+
+              res.json({
+                message: "ok",
+                data: { grocery }
+              })
+          })
+          .catch(next)
+      }
 }
 
 
