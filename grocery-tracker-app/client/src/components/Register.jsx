@@ -14,7 +14,7 @@ class Register extends React.Component {
     }
 
     handleInputchange(e) {
-        const [name, value] = e.target;
+        const { name, value } = e.target;
 
         this.setState({
             [name]: value,
@@ -26,8 +26,8 @@ class Register extends React.Component {
             <div className="register">
                 <form onSubmit={ (e) => this.props.handleRegisterSubmit(e, this.state)}>
                     <input type="text" name="username" value={this.state.username} placeholder="username" onChange={this.handleInputchange} />
-                    <input type="text" name="password" value={this.state.password}  placeholder="password" onChange={this.handleInputchange} />
-                    <input type="text" name="email" value={this.state.email}  placeholder="email" onChange={this.handleInputchange} />
+                    <input type="password" name="password" value={this.state.password}  placeholder="password" onChange={this.handleInputchange} />
+                    <input type="email" name="email" value={this.state.email}  placeholder="email" onChange={this.handleInputchange} />
                     <input type="text" name="first_name" value={this.state.first_name}  placeholder="first name" onChange={this.handleInputchange} />
                     <input type="text" name="last_name" value={this.state.last_name}  placeholder="last name" onChange={this.handleInputchange} />
                     <input type="submit" value="Register" />
