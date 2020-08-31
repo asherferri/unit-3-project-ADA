@@ -1,5 +1,6 @@
 //we need the name of the model for tracked groceries model.
 const db = require('../db/config')
+const Groceries = require('../models/groceries-model')
 const NameOfGroceriesModel = require('./tracked-groceries-model')
 
 class Users {
@@ -17,7 +18,7 @@ class Users {
         .oneOrNone('SELECT * FROM users WHERE username = $1', username)
         .then((user) => {
             if(user) return new this(user)
-            else throw new Error('THat User does not exists')
+            else throw new Error('That User does not exists')
         })
     }
 
@@ -35,7 +36,7 @@ class Users {
         return db
         .manyOrNone('SELECT * FROM launch WHERE user_id = $1', this.id)
         .then((groceries) => {
-            return groceries.map((item) => new NameOfGroceriesModel(item))
+            return groceries.map((item) => new Groceries(item))
         })
     }
 
