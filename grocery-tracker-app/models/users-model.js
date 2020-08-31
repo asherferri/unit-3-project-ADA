@@ -41,4 +41,4 @@ class Users {
 
 }
 
-module.exports = User
+module.exports = Users
