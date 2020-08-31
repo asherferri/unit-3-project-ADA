@@ -1,4 +1,3 @@
-//we need the name of the model for tracked groceries model.
 const db = require('../db/config')
 
 class Users {
