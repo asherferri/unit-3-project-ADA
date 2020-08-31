@@ -13,7 +13,7 @@ const moment = require('moment')
 const groceriesRouter = require('./routes/groceries-router')
 // // UNCOMENT THIS NEXT LINES AS PROGRESS REQUIRES
 // //authRouter
-// const authRouter = require('./routes/auth-router')
+const authRouter = require('./routes/auth-router')
 // //usersRouter
 // const usersRouter = require('./routes/users-router')
 
@@ -27,17 +27,17 @@ app.use(methodOverride('_method'))
 app.use(express.static('public'))
 app.use(cookieParser())
 // //uncoment this when updating server.js for auth addon
-// app.use(
-//     session({
-//         secret: process.env.SECRET_KEY,
-//         resave: false,
-//         saveUninitialized: true,
-//     })
-// )
-// //added when updating server.js for auth addon
-// //added passport and session use for app
-// app.use(passport.initialize())
-// app.use(passport.session())
+app.use(
+    session({
+        secret: process.env.SECRET_KEY,
+        resave: false,
+        saveUninitialized: true,
+    })
+)
+//added when updating server.js for auth addon
+//added passport and session use for app
+app.use(passport.initialize())
+app.use(passport.session())
 
 
 
@@ -58,11 +58,11 @@ app.get('/', (req, res) => {
 })
 // //uncoment this when auth layer is added
 // //add use to authRoute
-// app.use('/auth', authRouter)
+app.use('/api/auth', authRouter)
 // //add use to userRoute
-// app.use('/user', userRouter)
+// app.use('/user', usersRouter)
 //add use to route
-app.use('/groceries', groceriesRouter)
+app.use('/api/groceries', groceriesRouter)
 
 
 app.use('*', (req, res) => {
