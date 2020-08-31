@@ -29,16 +29,6 @@ class Users {
             RETURNING *`, this)
             .then((savedUser) => Object.assign(this, savedUser))
     }
-
-    //adding new method findUserGroceries
-    findUserGroceries() {
-        return db
-        .manyOrNone('SELECT * FROM launch WHERE user_id = $1', this.id)
-        .then((groceries) => {
-            return groceries.map((item) => new NameOfGroceriesModel(item))
-        })
-    }
-
 }
 
-module.exports = User
+module.exports = Users
