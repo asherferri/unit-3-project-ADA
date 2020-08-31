@@ -3,10 +3,10 @@ const db = require('../db/config')
 const Groceries = require('../models/groceries-model')
 
 class Users {
-    constructor({id, first_name, last_name, email, username, password_digest}) {
+    constructor({id, firstName, lastName, email, username, password_digest}) {
         this.id = id || null
-        this.first_name = first_name
-        this.last_name = last_name
+        this.firstName = firstName
+        this.lastName = lastName
         this.email = email
         this.username = username
         this.password_digest = password_digest
@@ -29,16 +29,6 @@ class Users {
             RETURNING *`, this)
             .then((savedUser) => Object.assign(this, savedUser))
     }
-
-    //adding new method findUserGroceries
-    findUserGroceries() {
-        return db
-        .manyOrNone('SELECT * FROM launch WHERE user_id = $1', this.id)
-        .then((groceries) => {
-            return groceries.map((item) => new Groceries(item))
-        })
-    }
-
 }
 
 module.exports = Users
