@@ -6,6 +6,8 @@ const cookieParser = require('cookie-parser')
 const methodOverride = require('method-override')
 const session = require('express-session')
 const passport = require('passport')
+//added moment denpendency
+const moment = require('moment')
 
 //trackedGroceriesRouter
 const trackedGroceriesRouter = require('./routes/tracked-groceries-router')
@@ -46,13 +48,13 @@ app.listen(PORT, () => {
 
 app.get('/', (req, res) => {
 //   //sends life signs as a pckge json
-//     res.json({
-//         spaceApp: `this is a trackedGroceriesApp 🤘🏻`
-//     })
+    res.json({
+        trackedGroceriesApp: `this is a trackedGroceriesApp by A.D.A.🤘🏻`
+    })
 //sends life signs as html element
    //res.send('<h1>This is a trackedGroceriesApp</h1>')
 //sends render of index view
-    res.render('index') 
+//     res.render('index') 
 })
 // //uncoment this when auth layer is added
 // //add use to authRoute
@@ -60,7 +62,7 @@ app.get('/', (req, res) => {
 // //add use to userRoute
 // app.use('/user', userRouter)
 //add use to route
-app.use('/launches', trackedGroceriesRouter)
+//app.use('/tgroceries', trackedGroceriesRouter)
 
 
 app.use('*', (req, res) => {
