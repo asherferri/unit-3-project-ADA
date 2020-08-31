@@ -1,4 +1,5 @@
 require('dotenv').config()
+const prettyLog = require('../logging/pretty-logs')
 
 const options = {
     query: e => {
@@ -20,6 +21,7 @@ function setDatabase() {
          */
         'dev' || !process.env.NODE_ENV) 
         {
+            prettyLog(`DB name is ${process.env.DB_NAME}`, null)
             return pgp ({
             database: process.env.DB_NAME,
             port: 5432,
