@@ -8,6 +8,7 @@ class GroceryList extends React.Component {
                 <GroceryItem />
                 <GroceryItem />
                 <GroceryItem />
+                <GroceryItem />
             </div>
         )
     }

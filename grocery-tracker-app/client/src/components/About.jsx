@@ -9,7 +9,7 @@ const About = () => {
             <p>In West Philadelphia born and raised, were 3 dudes on the computer where they spent most of their days.</p>
             <p>Chilling out, maxin, relaxin all cool, and all coding some apps inside the school.</p>
             <p>When a couple of errors who were up to no good, started making trouble under their app's hood.</p>
-            <p>They got in one lil' stack overflow and got scared, and decided to attend Pete and J's class in G.A.-Air</p>
+            <p>They got in one lil' stack overflow and got scared, and decided to attend Pete and J's class in G.A.-Air.</p>
         </div>
     )
 }
