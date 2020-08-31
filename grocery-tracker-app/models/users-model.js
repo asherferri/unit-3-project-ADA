@@ -1,7 +1,6 @@
 //we need the name of the model for tracked groceries model.
 const db = require('../db/config')
 const Groceries = require('../models/groceries-model')
-const NameOfGroceriesModel = require('./tracked-groceries-model')
 
 class Users {
     constructor({id, first_name, last_name, email, username, password_digest}) {
