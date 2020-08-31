@@ -16,7 +16,7 @@ class Users {
         .oneOrNone('SELECT * FROM users WHERE username = $1', username)
         .then((user) => {
             if(user) return new this(user)
-            else throw new Error('THat User does not exists')
+            else throw new Error('That User does not exists')
         })
     }
 
