@@ -1,6 +1,5 @@
 //we need the name of the model for tracked groceries model.
 const db = require('../db/config')
-const Groceries = require('../models/groceries-model')
 
 class Users {
     constructor({id, firstName, lastName, email, username, password_digest}) {
@@ -9,7 +8,7 @@ class Users {
         this.lastName = lastName
         this.email = email
         this.username = username
-        this.password_digest = password_digest
+        this.passwordDigest = password_digest
     }
     
     static findByUserName(username) {
@@ -25,7 +24,7 @@ class Users {
         return db
         .one(`INSERT INTO users
             (first_name, last_name, email, username, password_digest)
-            VALUES ($/first_name/, $/last_name/, $/email/, $/username/, $/password_digest/)
+            VALUES ($/firstName/, $/lastName/, $/email/, $/username/, $/passwordDigest/)
             RETURNING *`, this)
             .then((savedUser) => Object.assign(this, savedUser))
     }
