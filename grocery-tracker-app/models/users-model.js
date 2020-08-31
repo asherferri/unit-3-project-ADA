@@ -2,13 +2,15 @@
 const db = require('../db/config')
 
 class Users {
-    constructor({id, firstName, lastName, email, username, password_digest}) {
+    constructor({id, firstName, lastName, email, username, passwordDigest}) {
+
         this.id = id || null
         this.firstName = firstName
         this.lastName = lastName
         this.email = email
         this.username = username
-        this.passwordDigest = password_digest
+        this.passwordDigest = passwordDigest
+
     }
     
     static findByUserName(username) {
