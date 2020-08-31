@@ -19,7 +19,7 @@ class Groceries {
         )
         .then(groceries => {
             prettyLog(
-              "DB object returned from getAllUserGroceries(id) in tracked-groceries.js",
+              "DB object returned from getAllUserGroceries(id) in groceries-model.js",
               groceries
             );
 
@@ -37,7 +37,7 @@ class Groceries {
                 );
                 userGrocery.lastPurchasedDate = readablelastPurchasedDate;
                 prettyLog(
-                  "DB -> Grocery object in getAllUserGroceries(id) in tracked-groceries.js",
+                  "DB -> Grocery object in getAllUserGroceries(id) in groceries-model.js",
                   userGrocery
                 );
 
