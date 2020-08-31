@@ -1,6 +1,4 @@
-//we need the name of the model for tracked groceries model.
 const db = require('../db/config')
-const NameOfGroceriesModel = require('./tracked-groceries-model')
 
 class Users {
     constructor({id, first_name, last_name, email, username, password_digest}) {
@@ -29,16 +27,6 @@ class Users {
             RETURNING *`, this)
             .then((savedUser) => Object.assign(this, savedUser))
     }
-
-    //adding new method findUserGroceries
-    findUserGroceries() {
-        return db
-        .manyOrNone('SELECT * FROM launch WHERE user_id = $1', this.id)
-        .then((groceries) => {
-            return groceries.map((item) => new NameOfGroceriesModel(item))
-        })
-    }
-
 }
 
-module.exports = User
+module.exports = Users
