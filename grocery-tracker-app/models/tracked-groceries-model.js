@@ -1,4 +1,8 @@
 const db = require('../db/config')
+
+const moment = require("moment");
+moment().format();
+
 class Groceries {
     constructor({ id, name, recurrence, lastPurchasedDate, user_id}) {
         this.id = id || null
@@ -14,8 +18,30 @@ class Groceries {
             , id
         )
         .then(groceries => {
+            prettyLog(
+              "DB object returned from getAllUserGroceries(id) in tracked-groceries.js",
+              groceries
+            );
+
             groceries.map(grocery => {
-                return new this(grocery);
+                const userGrocery = new this(grocery)
+
+                prettyLog(
+                  "userGrocery before moment manipulation in getAllUserGroceries(id) in tracked-groceries.js",
+                  userGrocery
+                );
+
+                const lastPurchasedDate = moment(grocery.last_purchased_date);
+                const readablelastPurchasedDate = lastPurchasedDate.format(
+                  "dddd, MMMM Do, YYYY"
+                );
+                userGrocery.lastPurchasedDate = readablelastPurchasedDate;
+                prettyLog(
+                  "DB -> Grocery object in getAllUserGroceries(id) in tracked-groceries.js",
+                  userGrocery
+                );
+
+                return userGrocery; 
             })
         })
     }
