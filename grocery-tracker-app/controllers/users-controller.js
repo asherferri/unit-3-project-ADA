@@ -8,9 +8,9 @@ const usersController = {
     new User({
       username: req.body.username,
       email: req.body.email,
-      passwordDigest: hash,
-      firstName: req.body.first_name,
-      lastName: req.body.last_name,
+      password_digest: hash,
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
     })
       .save()
       .then((user) => {

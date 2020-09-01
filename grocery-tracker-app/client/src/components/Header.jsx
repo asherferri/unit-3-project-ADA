@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = (props) => {
     return (
         <header>
             <nav className="main-nav">
@@ -9,7 +9,7 @@ const Header = () => {
                 <ul>
                     <li><Link to="/groceries">Groceries</Link></li>
                     <li><Link to="/about">About</Link></li>
-                    <li className="logout"><Link to="/logout">Logout</Link></li>
+                    <li className="logout" onClick={() => props.logout()}><Link to="/logout">Logout</Link></li>
                 </ul>
             </nav>
         </header>
