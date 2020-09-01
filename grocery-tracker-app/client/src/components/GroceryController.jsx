@@ -8,6 +8,7 @@ class GroceryController extends React.Component {
         this.state = {
             dataLoaded: false,
             allGroceries: [],
+            // auth: props.auth,
         }
     }
 
@@ -16,7 +17,7 @@ class GroceryController extends React.Component {
     }
 
     getAllGroceries() {
-        fetch(`/api/groceries`)
+        fetch(`/api/groceries`/* , { credentials: 'include' } */)
         .then(res => res.json())
         .then(res => {
             console.log(res)
