@@ -92,6 +92,21 @@ const groceriesController = {
         .catch(next)
       })
   },
+
+  delete: (req, res, next) => {
+    Groceries.getById(req.params.id)
+      .then(groceryToDelete => {
+        prettyLog("groceryToDelete in groceriesController.delete", groceryToDelete);
+
+        return groceryToDelete.delete()
+          .then(() => {
+            res.json({
+              message: 'deleted!'
+            })
+          })
+          .catch(next)
+      })
+  }
 }
 
 module.exports = groceriesController
