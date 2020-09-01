@@ -1,1 +1,0 @@
-CREATE DATABASE grocery_tracker_dev;
