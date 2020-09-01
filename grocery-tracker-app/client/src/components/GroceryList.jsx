@@ -5,10 +5,9 @@ class GroceryList extends React.Component {
     render() {
         return (
             <div className="grocery-list">
-                <GroceryItem />
-                <GroceryItem />
-                <GroceryItem />
-                <GroceryItem />
+                {this.props.allGroceries.map(grocery => {
+                    return <GroceryItem key={grocery.id} grocery={grocery} />
+                })}
             </div>
         )
     }
