@@ -6,5 +6,6 @@ groceriesRouter.get('/', groceriesController.index)
 groceriesRouter.post('/', groceriesController.create)
 groceriesRouter.get('/:id([0-9]+)', groceriesController.show)
 groceriesRouter.put('/:id([0-9]+)', groceriesController.update)
+groceriesRouter.delete('/:id([0-9]+)', groceriesController.delete)
 
 module.exports = groceriesRouter
