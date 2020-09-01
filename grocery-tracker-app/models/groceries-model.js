@@ -89,6 +89,34 @@ class Groceries {
         }
       })
     }
+    
+    save() {
+      prettyLog("save() in groceries-model.js activated", null);
+      return db.one(
+        `INSERT INTO groceries 
+        (name, recurrence, last_purchased_date, user_id)
+        VALUES
+        ($/name/, $/recurrence/, $/lastPurchasedDate/, $/user_id/)
+        RETURNING *;`,
+        this
+      )
+      .then(grocery => {
+        const savedGrocery = new Groceries({
+          id: grocery.id,
+          name: grocery.name,
+          recurrence: grocery.recurrence,
+          lastPurchasedDate: grocery.last_purchased_date,
+          user_id: grocery.user_id
+        })
+
+        prettyLog(
+          "DB -> Grocery object in save() in groceries-model.js",
+          savedGrocery
+        )
+
+        return savedGrocery
+      })
+    }
 }
 
 module.exports = Groceries
