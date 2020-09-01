@@ -69,7 +69,29 @@ const groceriesController = {
         )
       })
       .catch(next)
-  }
+  },
+
+  update: (req, res, next) => {
+    Groceries.getById(req.params.id)
+      .then(foundGrocery => {
+        prettyLog(
+          "foundGrocery in groceriesController.update", 
+          foundGrocery)
+        
+        return foundGrocery.update({
+          name: req.body.name,
+          recurrence: req.body.recurrence,
+          lastPurchasedDate: req.body.lastPurchasedDate,
+        })
+        .then(updatedGrocery => {
+          res.json({
+            message: 'ok',
+            data: { updatedGrocery }
+          })
+        })
+        .catch(next)
+      })
+  },
 }
 
 module.exports = groceriesController
