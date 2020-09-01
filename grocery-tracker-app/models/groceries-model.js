@@ -153,6 +153,15 @@ class Groceries {
           return Object.assign(this, savedUpdatedGrocery);
         });
     }
+
+    delete() {
+      prettyLog("delete() in groceries-model.js activated", null);
+
+      return db.none(
+        `DELETE FROM groceries WHERE id = $1`,
+        this.id
+      )
+    }
 }
 
 module.exports = Groceries
