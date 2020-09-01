@@ -31,6 +31,7 @@ class App extends React.Component {
       })
     })
     .catch(err => console.log(err))
+    console.log(this)
   }
 
   handleLoginSubmit(e, data) {
@@ -106,7 +107,10 @@ class App extends React.Component {
                 : <Register handleRegisterSubmit={this.handleRegisterSubmit} />
             )} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/groceries" render={ () => <GroceryController auth={this.state.auth} /> } />
+            <Route exact path="/groceries" render={ () => (
+                this.state.auth
+                  ? <GroceryController auth={this.state.auth} />
+                  : <Redirect to="/login" /> )} />
           <Footer />
         </div>
       </BrowserRouter>

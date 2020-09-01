@@ -22,6 +22,7 @@ class Users {
     }
 
     save() {
+        console.log(this)
         return db
         .one(`INSERT INTO users
             (first_name, last_name, email, username, password_digest)

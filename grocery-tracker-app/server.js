@@ -61,7 +61,7 @@ app.get('/', (req, res) => {
 // //add use to authRoute
 app.use('/api/auth', authRouter)
 // //add use to userRoute
-// app.use('/user', usersRouter)
+// app.use('/api/users', usersRouter)
 //add use to route
 app.use('/api/groceries', groceriesRouter)
 
