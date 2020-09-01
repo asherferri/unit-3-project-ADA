@@ -114,8 +114,44 @@ class Groceries {
           savedGrocery
         )
 
-        return savedGrocery
+        return Object.assign(this, savedGrocery)
       })
+    }
+
+    update(changes) {
+      prettyLog("update() in groceries-model.js activated", null);
+
+      Object.assign(this, changes)
+      prettyLog(
+        "updated Grocery object in update(changes) in groceries-model.js",
+        this)
+
+      return db
+        .one(
+          `UPDATE groceries SET
+        name = $/name/, 
+        recurrence = $/recurrence/, 
+        last_purchased_date = $/lastPurchasedDate/ 
+        WHERE id = $/id/
+        RETURNING *;`,
+          this
+        )
+        .then((grocery) => {
+          const savedUpdatedGrocery = new Groceries({
+            id: grocery.id,
+            name: grocery.name,
+            recurrence: grocery.recurrence,
+            lastPurchasedDate: grocery.last_purchased_date,
+            user_id: grocery.user_id,
+          });
+
+          prettyLog(
+            "DB -> Grocery object in save() in groceries-model.js",
+            savedUpdatedGrocery
+          );
+
+          return Object.assign(this, savedUpdatedGrocery);
+        });
     }
 }
 
