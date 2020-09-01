@@ -22,5 +22,9 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "pg-promise": "^10.5.8"
+  },
+  "comments": {
+    "groceryTrackingApp": "developed by ADA",
+    "heroku if root in subdirectory": "git subtree push --prefix directoryOfApp heroku master"
   }
 }

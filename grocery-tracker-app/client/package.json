@@ -33,5 +33,7 @@
     ]
   },
   "proxy": "http://localhost:3001",
-  "comments": "heroku"
+  "comments": {
+    "heroku deployment": "in express app pckg.json instructions"
+  }
 }
