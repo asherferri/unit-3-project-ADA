@@ -8,7 +8,9 @@ const usersController = {
     new User({
       username: req.body.username,
       email: req.body.email,
-      password_digest: hash,
+      passwordDigest: hash,
+      firstName: req.body.first_name,
+      lastName: req.body.last_name,
     })
       .save()
       .then((user) => {
@@ -18,7 +20,7 @@ const usersController = {
           //we dont want it to land on an objext view.
           //redirect to spit user created for testing
           //res.redirect('/user')
-          res.redirect('/pantry')
+          // res.redirect('/api/groceries')
         })
       })
       .catch(next)
