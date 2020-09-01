@@ -94,7 +94,7 @@ class App extends React.Component {
       return (
       <BrowserRouter>
         <div className="grocery-app-container">
-          <Header />
+          <Header logout={this.logout} />
             <Route exact path="/" component={Home} />
             <Route exact path="/login" render={ () => (
               this.state.auth
@@ -111,6 +111,7 @@ class App extends React.Component {
                 this.state.auth
                   ? <GroceryController auth={this.state.auth} />
                   : <Redirect to="/login" /> )} />
+            <Route exact path="/logout" render={ () => <Redirect to="/" />} />
           <Footer />
         </div>
       </BrowserRouter>

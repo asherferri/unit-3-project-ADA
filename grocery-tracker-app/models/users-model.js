@@ -1,14 +1,14 @@
 const db = require('../db/config')
 
 class Users {
-    constructor({id, firstName, lastName, email, username, passwordDigest}) {
+    constructor({id, first_name, last_name, email, username, password_digest}) {
 
         this.id = id || null
-        this.firstName = firstName
-        this.lastName = lastName
+        this.first_name = first_name
+        this.last_name = last_name
         this.email = email
         this.username = username
-        this.passwordDigest = passwordDigest
+        this.password_digest = password_digest
 
     }
     
@@ -26,7 +26,7 @@ class Users {
         return db
         .one(`INSERT INTO users
             (first_name, last_name, email, username, password_digest)
-            VALUES ($/firstName/, $/lastName/, $/email/, $/username/, $/passwordDigest/)
+            VALUES ($/first_name/, $/last_name/, $/email/, $/username/, $/password_digest/)
             RETURNING *`, this)
             .then((savedUser) => Object.assign(this, savedUser))
     }
