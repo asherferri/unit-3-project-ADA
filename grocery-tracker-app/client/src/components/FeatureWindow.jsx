@@ -1,4 +1,5 @@
 import React from 'react';
+import SuggestedRecipe from './SuggestedRecipe';
 import GroceryForm from './GroceryForm';
 
 class FeatureWindow extends React.Component {
@@ -24,8 +25,8 @@ class FeatureWindow extends React.Component {
 
     render() {
         return (
-            <div className="feature-window">
-                <nav className="feature-nav">
+          <div className="feature-window">
+            <nav className="feature-nav">
                     <ul>
                         <li>Add Groceries</li>
                         <li>Check Deals!</li>
@@ -36,8 +37,10 @@ class FeatureWindow extends React.Component {
                     Features here
                     <GroceryForm handleFormSubmit={this.handleFormSubmit} />
                 </section>
-            </div>
-        )
+            <div>render() in GroveryController.jsx</div>
+            <div><SuggestedRecipe /></div>
+          </div>
+        );
     }
 }
 
