@@ -29,6 +29,7 @@ class FeatureWindow extends React.Component {
                     <ul>
                         <li>Add Groceries</li>
                         <li>Check Deals!</li>
+                        <li>Find Recipes!</li>
                     </ul>
                 </nav>
                 <section className="feature-section">
