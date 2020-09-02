@@ -1,5 +1,6 @@
 import React from 'react';
 import GroceryForm from './GroceryForm';
+import GroceryItem from './GroceryItem';
 
 class FeatureWindow extends React.Component {
 
@@ -22,6 +23,19 @@ class FeatureWindow extends React.Component {
         .catch(err => console.log(err))
     }
 
+    renderFeatureWindow() {
+        if (this.props.viewingId != null) {
+            return this.props.allGroceries.map(grocery => {
+                if (grocery.id === this.props.viewingId) {
+                    return <GroceryItem key={grocery.id} grocery={grocery} handleFormSubmit={this.handleFormSubmit} />
+                }
+            })
+        }
+        else {
+            return <GroceryForm handleFormSubmit={this.handleFormSubmit} isAdd={true} />
+        }
+    }
+
     render() {
         return (
             <div className="feature-window">
@@ -34,7 +48,7 @@ class FeatureWindow extends React.Component {
                 </nav>
                 <section className="feature-section">
                     Features here
-                    <GroceryForm handleFormSubmit={this.handleFormSubmit} />
+                    { this.renderFeatureWindow() }
                 </section>
             </div>
         )

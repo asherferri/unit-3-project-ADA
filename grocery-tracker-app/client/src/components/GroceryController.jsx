@@ -10,7 +10,7 @@ class GroceryController extends React.Component {
             dataLoaded: false,
             allGroceries: [],
             auth: props.auth,
-            currentlyEditing: null,
+            currentlyViewing: null,
         }
         this.getAllGroceries = this.getAllGroceries.bind(this)
     }
@@ -33,28 +33,18 @@ class GroceryController extends React.Component {
         .catch(err => console.log(err))
     }
 
-    // setEditing = (id) => {
-    //     this.setState({
-    //         currentlyEditing: id,
-    //     })
-    // }
-    
-    // renderFeatureWindow() {
-    //     if (this.state.currentlyEditing != null) {
-    //         this.state.allGroceries.map(grocery => {
-    //             if (grocery.id === this.state.currentlyEditing) {
-    //                 return <GroceryForm key={grocery.id} grocery={grocery} isAdd={false} />
-    //             }
-    //         })
-    //     }
-    // }
+    setViewing = (id) => {
+        this.setState({
+            currentlyViewing: id,
+        })
+        console.log(this.state.currentlyViewing)
+    }
 
     render() {
         return (
             <div className="controller-container">
-                <GroceryList allGroceries={this.state.allGroceries} /*setEditing={this.setEditing} */ />
-                <FeatureWindow getAllGroceries={this.getAllGroceries}/>
-                {/* {this.renderFeatureWindow()} */}
+                <GroceryList allGroceries={this.state.allGroceries} setViewing={this.setViewing}  />
+                <FeatureWindow getAllGroceries={this.getAllGroceries} allGroceries={this.state.allGroceries} viewingId={this.state.currentlyViewing}/>
             </div>
         )
     }
