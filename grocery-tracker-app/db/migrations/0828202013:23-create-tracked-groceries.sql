@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS groceries (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     recurrence INTEGER, 
-    last_purchased_date date,
+    last_purchased_date DATE,
     user_id INTEGER NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
