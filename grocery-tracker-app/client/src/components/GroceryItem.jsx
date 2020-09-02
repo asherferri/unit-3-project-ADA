@@ -12,7 +12,8 @@ const GroceryItem = (props) => {
                 <p>UserId: {props.grocery.user_id}</p>
             </div>
             <div className="item-button">
-                <span onClick={() => props.setEditing(props.grocery.id)}>Info / Update</span>
+                <span onClick={() => props.getGrocery(props.grocery.id, 'edit')}>Update</span>
+                <span onClick={(evt) => props.handleFormSubmit('DELETE', evt, props.grocery, props.grocery.id)} >Delete</span>
             </div>
         </div>
     )

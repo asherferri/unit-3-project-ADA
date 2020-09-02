@@ -1,5 +1,6 @@
 import React from 'react';
 import GroceryForm from './GroceryForm';
+import GroceryItem from './GroceryItem';
 
 class FeatureWindow extends React.Component {
 
@@ -20,6 +21,19 @@ class FeatureWindow extends React.Component {
             this.props.getAllGroceries();
         })
         .catch(err => console.log(err))
+
+        this.props.clear();
+    }
+
+    renderFeatureWindow() {
+        switch(this.props.viewType) {
+            case 'view':
+                return <GroceryItem key={this.props.grocery.id} grocery={this.props.grocery} handleFormSubmit={this.handleFormSubmit} getGrocery={this.props.getGrocery} />
+            case 'edit':
+                return <GroceryForm handleFormSubmit={this.handleFormSubmit} isAdd={false} grocery={this.props.grocery} />
+            default:
+                return <GroceryForm handleFormSubmit={this.handleFormSubmit} isAdd={true} />
+        }
     }
 
     render() {
@@ -28,13 +42,11 @@ class FeatureWindow extends React.Component {
                 <nav className="feature-nav">
                     <ul>
                         <li>Add Groceries</li>
-                        <li>Check Deals!</li>
                         <li>Find Recipes!</li>
                     </ul>
                 </nav>
                 <section className="feature-section">
-                    Features here
-                    <GroceryForm handleFormSubmit={this.handleFormSubmit} />
+                    { this.renderFeatureWindow() }
                 </section>
             </div>
         )

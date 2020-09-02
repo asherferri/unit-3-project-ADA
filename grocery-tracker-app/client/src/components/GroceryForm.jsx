@@ -4,9 +4,9 @@ class GroceryForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            name: '',
-            recurrence: '',
-            last_purchased_date: '',
+            name: props.grocery ? props.grocery.name : '',
+            recurrence: props.grocery ? props.grocery.recurrence : '',
+            last_purchased_date: props.grocery ? props.grocery.last_purchased_date : '',
         }
         this.handleChange = this.handleChange.bind(this)
     }
@@ -21,7 +21,9 @@ class GroceryForm extends React.Component {
     render() {
         return (
             <div className="grocery-form">
-                <form onSubmit={(evt) => this.props.handleFormSubmit('POST', evt, this.state)} >
+                <form onSubmit={this.props.isAdd === true 
+                        ? (evt) => this.props.handleFormSubmit('POST', evt, this.state)
+                        : (evt) => this.props.handleFormSubmit('PUT', evt, this.state, this.props.grocery.id)} >
                     <div>
                         <label>Grocery Item Name:</label>
                         <input type="text" name="name" placeholder="grocery item" value={this.state.name} onChange={this.handleChange} />
