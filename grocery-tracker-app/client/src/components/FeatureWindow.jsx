@@ -21,18 +21,18 @@ class FeatureWindow extends React.Component {
             this.props.getAllGroceries();
         })
         .catch(err => console.log(err))
+
+        this.props.clear();
     }
 
     renderFeatureWindow() {
-        if (this.props.viewingId != null) {
-            return this.props.allGroceries.map(grocery => {
-                if (grocery.id === this.props.viewingId) {
-                    return <GroceryItem key={grocery.id} grocery={grocery} handleFormSubmit={this.handleFormSubmit} />
-                }
-            })
-        }
-        else {
-            return <GroceryForm handleFormSubmit={this.handleFormSubmit} isAdd={true} />
+        switch(this.props.viewType) {
+            case 'view':
+                return <GroceryItem key={this.props.grocery.id} grocery={this.props.grocery} handleFormSubmit={this.handleFormSubmit} getGrocery={this.props.getGrocery} />
+            case 'edit':
+                return <GroceryForm handleFormSubmit={this.handleFormSubmit} isAdd={false} grocery={this.props.grocery} />
+            default:
+                return <GroceryForm handleFormSubmit={this.handleFormSubmit} isAdd={true} />
         }
     }
 
@@ -42,12 +42,10 @@ class FeatureWindow extends React.Component {
                 <nav className="feature-nav">
                     <ul>
                         <li>Add Groceries</li>
-                        <li>Check Deals!</li>
                         <li>Find Recipes!</li>
                     </ul>
                 </nav>
                 <section className="feature-section">
-                    Features here
                     { this.renderFeatureWindow() }
                 </section>
             </div>

@@ -7,7 +7,7 @@ const GroceryUnit = (props) => {
                 <h3>{props.grocery.name}</h3>
             </div>
             <div className="item-button">
-                <span onClick={() => props.setViewing(props.grocery.id)}>Info / Update</span>
+                <span onClick={() => props.getGrocery(props.grocery.id, 'view')}>Info / Update</span>
             </div>
         </div>
     )

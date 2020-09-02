@@ -1,18 +1,20 @@
 import React from 'react';
 import GroceryList from './GroceryList';
 import FeatureWindow from './FeatureWindow';
-import GroceryForm from'./GroceryForm';
 
 class GroceryController extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            dataLoaded: false,
             allGroceries: [],
             auth: props.auth,
-            currentlyViewing: null,
+            currentGrocery: null,
+            dataLoaded: false,
+            viewType: '',
         }
         this.getAllGroceries = this.getAllGroceries.bind(this)
+        this.getGrocery = this.getGrocery.bind(this)
+        this.clearData = this.clearData.bind(this)
     }
 
     componentDidMount() {
@@ -33,18 +35,31 @@ class GroceryController extends React.Component {
         .catch(err => console.log(err))
     }
 
-    setViewing = (id) => {
-        this.setState({
-            currentlyViewing: id,
+    getGrocery(id, view) {
+        fetch(`/api/groceries/${id}` , { credentials: 'include' })
+        .then(res => res.json())
+        .then(res => {
+            console.log(res)
+            this.setState({
+                currentGrocery: res.data.grocery,
+                viewType: view,
+            })
         })
-        console.log(this.state.currentlyViewing)
+        .catch(err => console.log(err))
+    }
+
+    clearData() {
+        this.setState({
+            currentGrocery: null,
+            viewType: '',
+        })
     }
 
     render() {
         return (
             <div className="controller-container">
-                <GroceryList allGroceries={this.state.allGroceries} setViewing={this.setViewing}  />
-                <FeatureWindow getAllGroceries={this.getAllGroceries} allGroceries={this.state.allGroceries} viewingId={this.state.currentlyViewing}/>
+                <GroceryList allGroceries={this.state.allGroceries} getGrocery={this.getGrocery}  />
+                <FeatureWindow getAllGroceries={this.getAllGroceries} allGroceries={this.state.allGroceries} viewType={this.state.viewType} grocery={this.state.currentGrocery} getGrocery={this.getGrocery} clear={this.clearData} />
             </div>
         )
     }
