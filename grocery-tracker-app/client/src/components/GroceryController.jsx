@@ -10,6 +10,7 @@ class GroceryController extends React.Component {
             allGroceries: [],
             auth: props.auth,
         }
+        this.getAllGroceries = this.getAllGroceries.bind(this)
     }
 
     componentDidMount() {
@@ -34,7 +35,7 @@ class GroceryController extends React.Component {
         return (
             <div className="controller-container">
                 <GroceryList allGroceries={this.state.allGroceries} />
-                <FeatureWindow />
+                <FeatureWindow getAllGroceries={this.getAllGroceries}/>
             </div>
         )
     }
