@@ -6,13 +6,13 @@ const GroceryItem = (props) => {
         <div className="grocery-item-container">
             <div className="grocery-item">
                 <h3>{props.grocery.name}</h3>
-                <p>Last Purchased: {Moment(props.grocery.lastPurchasedDate).format()}</p>
+                <p>Last Purchased: {Moment(props.grocery.last_purchase_date).format("MM/DD/YYYY")}</p>
                 <p>Shopping Recurrance: {props.grocery.recurrence} days</p>
-                <p>Expected Re-Purchase: {Moment("2020-8-31").add(props.grocery.recurrence, 'days').format("MM/DD/YYYY")}</p>
+                <p>Expected Re-Purchase: {Moment(props.grocery.last_purchase_date).add(props.grocery.recurrence, 'days').format("MM/DD/YYYY")}</p>
                 <p>UserId: {props.grocery.user_id}</p>
             </div>
             <div className="item-button">
-                <span>Info / Update</span>
+                <span onClick={() => props.setEditing(props.grocery.id)}>Info / Update</span>
             </div>
         </div>
     )

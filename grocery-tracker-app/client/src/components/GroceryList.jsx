@@ -6,7 +6,7 @@ class GroceryList extends React.Component {
         return (
             <div className="grocery-list">
                 {this.props.allGroceries.map(grocery => {
-                    return <GroceryItem key={grocery.id} grocery={grocery} />
+                    return <GroceryItem key={grocery.id} grocery={grocery} /*setEditing={this.props.setEditing} */ />
                 })}
             </div>
         )

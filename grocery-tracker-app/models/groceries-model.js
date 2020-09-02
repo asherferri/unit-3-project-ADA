@@ -5,11 +5,11 @@ const moment = require("moment");
 moment().format();
 
 class Groceries {
-    constructor({ id, name, recurrence, lastPurchasedDate, user_id}) {
+    constructor({ id, name, recurrence, last_purchased_date, user_id}) {
         this.id = id || null
         this.name = name
         this.recurrence = recurrence
-        this.lastPurchasedDate = lastPurchasedDate
+        this.last_purchased_date = last_purchased_date
         this.user_id = user_id
     }
 
@@ -43,7 +43,7 @@ class Groceries {
                 const readablelastPurchasedDate = lastPurchasedDate.format(
                   "dddd, MMMM Do, YYYY"
                 );
-                userGrocery.lastPurchasedDate = readablelastPurchasedDate;
+                userGrocery.last_purchased_date = readablelastPurchasedDate;
                 prettyLog(
                   "DB -> Grocery object in getAllUserGroceries(id) in groceries-model.js",
                   userGrocery
@@ -76,7 +76,7 @@ class Groceries {
           const readablelastPurchasedDate = lastPurchasedDate.format(
             "dddd, MMMM Do, YYYY"
           );
-          foundGrocery.lastPurchasedDate = readablelastPurchasedDate;
+          foundGrocery.last_purchased_date = readablelastPurchasedDate;
           prettyLog(
             "DB -> Grocery object in getById(id) in groceries-model.js (after momnent.js)",
             foundGrocery
@@ -96,7 +96,7 @@ class Groceries {
         `INSERT INTO groceries 
         (name, recurrence, last_purchased_date, user_id)
         VALUES
-        ($/name/, $/recurrence/, $/lastPurchasedDate/, $/user_id/)
+        ($/name/, $/recurrence/, $/last_purchased_date/, $/user_id/)
         RETURNING *;`,
         this
       )
@@ -105,7 +105,7 @@ class Groceries {
           id: grocery.id,
           name: grocery.name,
           recurrence: grocery.recurrence,
-          lastPurchasedDate: grocery.last_purchased_date,
+          last_purchased_date: grocery.last_purchased_date,
           user_id: grocery.user_id
         })
 
@@ -131,7 +131,7 @@ class Groceries {
           `UPDATE groceries SET
         name = $/name/, 
         recurrence = $/recurrence/, 
-        last_purchased_date = $/lastPurchasedDate/ 
+        last_purchased_date = $/last_purchased_date/ 
         WHERE id = $/id/
         RETURNING *;`,
           this
@@ -141,7 +141,7 @@ class Groceries {
             id: grocery.id,
             name: grocery.name,
             recurrence: grocery.recurrence,
-            lastPurchasedDate: grocery.last_purchased_date,
+            last_purchased_date: grocery.last_purchased_date,
             user_id: grocery.user_id,
           });
 
