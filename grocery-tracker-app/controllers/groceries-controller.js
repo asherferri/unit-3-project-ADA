@@ -7,8 +7,8 @@ const groceriesController = {
 
     // Hard coding user_id to 1 since there is no req.user.id yet 
     
-    // Groceries.getAllUserGroceries(req.user.id) 
-    Groceries.getAllUserGroceries('1')
+    Groceries.getAllUserGroceries(req.user.id) 
+    // Groceries.getAllUserGroceries('1')
       .then(groceries => {
         prettyLog(
           "groceries from getAllUserGroceries(id) in groceriesController.index",
@@ -46,8 +46,8 @@ const groceriesController = {
     const newGrocery = new Groceries({
       name: req.body.name,
       recurrence: req.body.recurrence,
-      lastPurchasedDate: req.body.lastPurchasedDate,
-      user_id: 1,
+      last_purchased_date: req.body.last_purchased_date,
+      user_id: req.user.id,
 
       // Hard coding user_id to 1 since there is no req.user.id yet
 
@@ -81,7 +81,7 @@ const groceriesController = {
         return foundGrocery.update({
           name: req.body.name,
           recurrence: req.body.recurrence,
-          lastPurchasedDate: req.body.lastPurchasedDate,
+          last_purchased_date: req.body.last_purchased_date,
         })
         .then(updatedGrocery => {
           res.json({

@@ -8,7 +8,7 @@ class FeatureWindow extends React.Component {
 
         fetch(`/api/groceries/${id || ''}`, {
             method: method,
-            // credentials: 'include',
+            credentials: 'include', 
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -17,7 +17,7 @@ class FeatureWindow extends React.Component {
         .then(res => res.json())
         .then(res => {
             console.log(res)
-            this.getAllGroceries();
+            this.props.getAllGroceries();
         })
         .catch(err => console.log(err))
     }
@@ -29,6 +29,7 @@ class FeatureWindow extends React.Component {
                     <ul>
                         <li>Add Groceries</li>
                         <li>Check Deals!</li>
+                        <li>Find Recipes!</li>
                     </ul>
                 </nav>
                 <section className="feature-section">
