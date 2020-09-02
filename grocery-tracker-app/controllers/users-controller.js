@@ -15,6 +15,12 @@ const usersController = {
       .save()
       .then((user) => {
         req.login(user, (err) => {
+          res.json({
+            auth: true,
+            data: {
+              user: user,
+            },
+          })
           if (err) return next(err)
           //we declare wich view we land after signing up
           //we dont want it to land on an objext view.
