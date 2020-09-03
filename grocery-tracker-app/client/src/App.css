@@ -1,6 +1,12 @@
 /* Global */
 body {
   background-color: grey;
+  background-image: url('./img/Pantry2.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* uncoment next line for a beautiful chaos */
+  /* font-size: 10vw; */
 }
 
 .grocery-app-container {
@@ -17,6 +23,7 @@ a {
   text-decoration: none;
 }
 
+/* Header n Footer B =================================> ᕦ(ò_óˇ)ᕤ */
 /* Header */
 header {
   display: block;
@@ -24,49 +31,114 @@ header {
   top: 0;
 }
 
+/* Footer */
+footer {
+  display: flex;
+  height: 7vh;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  /* background-color: lightcoral; */
+  /* background: rgba(0, 0, 0, 0.5); */
+  /* uncoment next line in case color bar needed */
+  /* background-color: rgba(132, 204, 198, 0.9); */
+}
+
+.footer-text {
+  color: white;
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
+  font-weight: 500;
+  transition: font-size 2s;
+}
+.footer-text:hover {
+  font-size: 2vw;
+}
+/* Header n Footer E =================================> ᕦ(ò_óˇ)ᕤ */
+
+/* Nav Bar B =========================================> ᕦ(ò_óˇ)ᕤ */
 nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: hotpink;
-  width: 2000px;
-  max-width: 100vw;
+  /* uncoment next line in case color bar needed */
+  /* background-color: rgb(132, 204, 198); */
+  /* width: 2000px;
+  max-width: 100vw; */
+  width: 100vw;
 }
 
 .logo {
-  margin-left: 4px;
+  /* margin-left: 4px; */
+  padding: 1vw;
+  font-weight: 700;
+  font-size: 3vw;
+  transition: text-shadow 1s;
+  color: white;
+}
+.logo:hover {
+  text-shadow: 2px 2px 4px rgb(0, 0, 0); 
 }
 
-li {
+.nav-bar, .logout {
   display: inline-block;
-  margin: 0 4px;
+  /* margin: 0 4px; */
+  padding: 0 2vw 0 0;
+  transition: text-shadow .3s;
+  color: aliceblue;
+  font-weight: 700;
 }
-
-/* Footer */
-footer {
-  display: block;
-  width: 2000px;
-  max-width: 100vw;
-  position: fixed;
-  bottom: 0;
-  text-align: center;
-  background-color: lightcoral;
+.nav-bar:hover {
+  text-shadow: 3px 3px 5px rgb(0, 0, 0); 
 }
+.logout:hover {
+  color: rgb(1, 80, 63);
+  text-shadow: 4px 3px 10px rgb(3, 50, 94);
+}
+/* Nav Bar E =========================================> ᕦ(ò_óˇ)ᕤ */
 
-/* Home */
+/* Home Page B =========================================> ᕦ(ò_óˇ)ᕤ */
 .home {
+  /* background: rgba(0, 0, 0, 0.5); */
+  box-shadow: 2px 2px 7px black;
+  background-color: rgba(132, 204, 198, 0.9);
+  border-radius: 1%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  min-height: 700px;
-  width: 2000px;
-  max-width: 100vw;
+  max-width: 500px;
+  width: 50vw;
+  height: 70vh;
+  overflow: auto;
 }
 
-section {
-  background-color: lightblue;
+.home-buttons{
+  /* background: chartreuse; */
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  height: 25px;
+}
+.login-home, .register-home {
+  box-shadow: 2px 2px 5px black;
+  border-radius: 10px;
+  background: rgb(184, 241, 255);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-weight: 610;
+  padding: 0;
+  margin: 7px;
+  width: 7vw;
+  height: 25px;
+  overflow: hidden;
+  transition: text-shadow .3s;
+}
+.login-home:hover, .register-home:hover {
+  color: white;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
 }
 
 /* Login and Register */
@@ -77,6 +149,17 @@ section {
   align-items: center;
 }
 
+.app-hm-xtrct {
+  text-align: center;
+  padding: 1vw;
+  line-height: 1.5em;
+  color: white;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
+  font-size: 100%;
+}
+
+/* Home Page E =========================================> ᕦ(ò_óˇ)ᕤ */
+
 .login input, .register input {
   margin: 0 5px;
   border-radius: 5px;
@@ -85,7 +168,7 @@ section {
 .register-link {
   text-decoration: underline;
 }
-
+/* Grocerie List Page B =========================================> ᕦ(ò_óˇ)ᕤ */
 /* Grocery App Content */
 .controller-container {
   display: flex;
@@ -95,33 +178,41 @@ section {
   min-height: 700px;
   width: 2000px;
   max-width: 100vw;
+  /* background: red; */
 }
 
 .grocery-list, .feature-window {
-  width: 400px;
-  height: 600px;
-  padding: 10px;
-  margin: 0 10px;
-  background-color: khaki;
+  box-shadow: 2px 2px 7px black;
+  background-color: rgba(132, 204, 198, 0.9);
   border-radius: 10px;
+  width: 30vw;
+  height: 70vh;
+  /* padding: 10px; */
+  /* margin: 0 10px; */
+  /* background-color: khaki; */
+  /* border-radius: 10px; */
   overflow: auto;
 }
 
 .grocery-item-container {
-  background-color: mediumpurple;
+  margin: 0.5vw;
+  border-radius: 7px;
+  background-color: rgba(100,100,100,1);
   display: flex;
   justify-content: space-around;
   align-items: center;
   border-bottom: 1px solid black;
+  box-shadow: 1px 1px 7px black;
 }
 
 .grocery-item {
   background-color: mediumaquamarine;
-  padding: 2px;
+  /* padding: 2px; */
 }
 
 .item-button span {
-  background-color: maroon;
+  background-color: rgb(163, 163, 163);
   padding: 2px;
   border-radius: 5px;
 }
+/* Grocerie List Page E =========================================> ᕦ(ò_óˇ)ᕤ */

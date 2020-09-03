@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 const Header = (props) => {
     return (
         <header>
-            <nav className="main-nav">
-                <div className="logo">Logo</div>
+            <nav className="nav">
+                <div className="logo">
+                    <Link to="/">ButterY</Link>
+                </div>
                 <ul>
-                    {/* Determines link path to use, App handles routing */}
-                    <li><Link to="/groceries">Groceries</Link></li>
-                    <li><Link to="/about">About</Link></li>
+                    <li className="nav-bar"><Link to="/groceries">Groceries</Link></li>
+                    <li className="nav-bar"><Link to="/about">About</Link></li>
                     <li className="logout" onClick={() => props.logout()}><Link to="/logout">Logout</Link></li>
                 </ul>
             </nav>
