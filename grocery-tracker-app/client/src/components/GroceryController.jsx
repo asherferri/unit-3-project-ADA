@@ -20,6 +20,9 @@ class GroceryController extends React.Component {
     componentDidMount() {
         console.log(this)
         this.getAllGroceries();
+        if (localStorage.getItem('cG') != null && localStorage.getItem('vT') != null) {
+            this.getGrocery(parseInt(localStorage.getItem('cG')), localStorage.getItem('vT'))
+        }
     }
 
     /* Function to lookup all groceries, includes credentials for user authentication */
@@ -41,16 +44,19 @@ class GroceryController extends React.Component {
         fetch(`/api/groceries/${id}` , { credentials: 'include' })
         .then(res => res.json())
         .then(res => {
-            console.log(res)
             this.setState({
                 currentGrocery: res.data.grocery,
                 viewType: view,
             })
+            localStorage.setItem('cG', res.data.grocery.id);
+            localStorage.setItem('vT', view );
         })
         .catch(err => console.log(err))
     }
 
     clearData() {
+        localStorage.setItem('cG', null);
+        localStorage.setItem('vT', null );
         this.setState({
             currentGrocery: null,
             viewType: '',
