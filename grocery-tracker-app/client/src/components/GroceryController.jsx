@@ -18,7 +18,7 @@ class GroceryController extends React.Component {
     }
     /* Loads groceries when page loads by calling getAllGroceries function */
     componentDidMount() {
-        console.log(this)
+        // console.log(this)
         this.getAllGroceries();
     }
 
@@ -27,7 +27,7 @@ class GroceryController extends React.Component {
         fetch(`/api/groceries` , { credentials: 'include' })
         .then(res => res.json())
         .then(res => {
-            console.log(res)
+            // console.log(res)
             this.setState({
                 allGroceries: res.data.groceries,
                 dataLoaded: true,

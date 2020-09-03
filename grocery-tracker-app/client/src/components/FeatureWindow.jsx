@@ -1,4 +1,5 @@
 import React from 'react';
+import SuggestedRecipe from './SuggestedRecipe';
 import GroceryForm from './GroceryForm';
 import GroceryItem from './GroceryItem';
 
@@ -30,7 +31,11 @@ class FeatureWindow extends React.Component {
     renderFeatureWindow() {
         switch(this.props.viewType) {
             case 'view':
-                return <GroceryItem key={this.props.grocery.id} grocery={this.props.grocery} handleFormSubmit={this.handleFormSubmit} getGrocery={this.props.getGrocery} />
+                return (
+                    <>
+                        <GroceryItem key={this.props.grocery.id} grocery={this.props.grocery} handleFormSubmit={this.handleFormSubmit} getGrocery={this.props.getGrocery} /> 
+                        <SuggestedRecipe grocery={this.props.grocery} />
+                    </>)
             case 'edit':
                 return <GroceryForm handleFormSubmit={this.handleFormSubmit} isAdd={false} grocery={this.props.grocery} />
             default:
@@ -40,8 +45,8 @@ class FeatureWindow extends React.Component {
 
     render() {
         return (
-            <div className="feature-window">
-                <nav className="feature-nav">
+          <div className="feature-window">
+            <nav className="feature-nav">
                     <ul>
                         <li>Add Groceries</li>
                         <li>Find Recipes!</li>
@@ -50,8 +55,9 @@ class FeatureWindow extends React.Component {
                 <section className="feature-section">
                     { this.renderFeatureWindow() }
                 </section>
-            </div>
-        )
+            <div>render() in GroveryController.jsx</div>
+          </div>
+        );
     }
 }
 

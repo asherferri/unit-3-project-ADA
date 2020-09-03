@@ -32,7 +32,7 @@ class App extends React.Component {
       })
     })
     .catch(err => console.log(err))
-    console.log(this)
+    // console.log(this)
   }
   
   /* Function to handle user login to site */
@@ -49,7 +49,7 @@ class App extends React.Component {
     })
     .then(res => res.json())
     .then(res => {
-      console.log(res);
+      // console.log(res);
       this.setState({
         auth: res.auth,
         user: res.data.user,
