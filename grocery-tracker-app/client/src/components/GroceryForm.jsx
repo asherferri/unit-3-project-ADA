@@ -1,6 +1,7 @@
 import React from 'react';
 
 class GroceryForm extends React.Component {
+    /* If a grocery is sent to the grocery form, populate state with grocery data to edit, if not then leave state blank for adding new grocery */
     constructor(props) {
         super(props)
         this.state = {
@@ -10,7 +11,7 @@ class GroceryForm extends React.Component {
         }
         this.handleChange = this.handleChange.bind(this)
     }
-
+    /* Used to set state of changes in the webform to each input field */
     handleChange(evt) {
         const { name, value } = evt.target
         this.setState({
@@ -21,6 +22,7 @@ class GroceryForm extends React.Component {
     render() {
         return (
             <div className="grocery-form">
+                {/* If the isAdd props is true, send back form data to create new grocery item in db, else update existing grocery item, sends info back up to FeatureWindow */}
                 <form onSubmit={this.props.isAdd === true 
                         ? (evt) => this.props.handleFormSubmit('POST', evt, this.state)
                         : (evt) => this.props.handleFormSubmit('PUT', evt, this.state, this.props.grocery.id)} >
