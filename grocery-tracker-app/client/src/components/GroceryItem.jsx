@@ -18,6 +18,7 @@ const GroceryItem = (props) => {
                 <span onClick={() => props.getGrocery(props.grocery.id, 'edit')}>Update</span>
                 {/* Sending ID back up to FeatureWindow to handle deleting grocery from db */}
                 <span onClick={(evt) => props.handleFormSubmit('DELETE', evt, props.grocery, props.grocery.id)} >Delete</span>
+                <span onClick={(evt) => props.handleFormSubmit('DELETE', evt, props.grocery, props.grocery.id)} >Recipe</span>
             </div>
         </div>
     )
