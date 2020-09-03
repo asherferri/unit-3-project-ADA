@@ -13,6 +13,7 @@ class Register extends React.Component {
         this.handleInputchange = this.handleInputchange.bind(this)
     }
 
+    /* Used to set state of changes in the webform to each input field */
     handleInputchange(e) {
         const { name, value } = e.target;
 
@@ -24,6 +25,7 @@ class Register extends React.Component {
     render() {
         return (
             <div className="register">
+                {/* Sends registration information back up to App */}
                 <form onSubmit={ (e) => this.props.handleRegisterSubmit(e, this.state)}>
                     <input type="text" name="username" value={this.state.username} placeholder="username" onChange={this.handleInputchange} />
                     <input type="password" name="password" value={this.state.password}  placeholder="password" onChange={this.handleInputchange} />

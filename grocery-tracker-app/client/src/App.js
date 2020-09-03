@@ -21,6 +21,7 @@ class App extends React.Component {
     this.logout = this.logout.bind(this)
   }
 
+  /* Checks credentials for user authentication at app load */
   componentDidMount() {
     fetch(`/api/auth/verify`, {credentials: 'include'} )
     .then(res => res.json())
@@ -33,7 +34,8 @@ class App extends React.Component {
     .catch(err => console.log(err))
     // console.log(this)
   }
-
+  
+  /* Function to handle user login to site */
   handleLoginSubmit(e, data) {
     e.preventDefault();
 
@@ -56,6 +58,7 @@ class App extends React.Component {
     .catch(err => console.log(err));
   }
 
+  /* Function to handle registering a new user for site */
   handleRegisterSubmit(e, data) {
     e.preventDefault();
 
@@ -78,6 +81,7 @@ class App extends React.Component {
     .catch(err => console.log(err))
   }
 
+  /* Function to handle user logout from site */
   logout() {
     fetch(`/api/auth/logout`, { credentials: 'include'} )
     .then(res => res.json())
