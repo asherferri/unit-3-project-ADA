@@ -1,16 +1,27 @@
 import React from 'react';
+import Moment from 'moment';
 
 class GroceryForm extends React.Component {
     /* If a grocery is sent to the grocery form, populate state with grocery data to edit, if not then leave state blank for adding new grocery */
     constructor(props) {
         super(props)
         this.state = {
-            name: props.grocery ? props.grocery.name : '',
-            recurrence: props.grocery ? props.grocery.recurrence : '',
-            last_purchased_date: props.grocery ? props.grocery.last_purchased_date : '',
+            name: this.props.grocery ? this.props.grocery.name : '',
+            recurrence: this.props.grocery ? this.props.grocery.recurrence : '',
+            last_purchased_date: this.props.grocery ? this.props.grocery.last_purchased_date : '',
         }
         this.handleChange = this.handleChange.bind(this)
     }
+
+    componentDidMount() {
+        if (this.props.grocery != null) {
+            const newDate = new Date(Moment(this.state.last_purchased_date,"dddd, MMMM Do, YYYY").format('ddd MMM DD YYYY h:mm:ss')).toISOString().substring(0, 10)
+            this.setState({
+                last_purchased_date: newDate,
+            })
+        }
+    }
+
     /* Used to set state of changes in the webform to each input field */
     handleChange(evt) {
         const { name, value } = evt.target
