@@ -4,6 +4,7 @@ import GroceryItem from './GroceryItem';
 
 class FeatureWindow extends React.Component {
 
+    /* Function that handles submit for POST, PUT, DELETE */
     handleFormSubmit = (method, evt, data, id) => {
         evt.preventDefault();
 
@@ -25,6 +26,7 @@ class FeatureWindow extends React.Component {
         this.props.clear();
     }
 
+    /* Function to determine what to shows in the FeatureWindow */
     renderFeatureWindow() {
         switch(this.props.viewType) {
             case 'view':

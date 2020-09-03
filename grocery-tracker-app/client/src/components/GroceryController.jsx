@@ -16,12 +16,13 @@ class GroceryController extends React.Component {
         this.getGrocery = this.getGrocery.bind(this)
         this.clearData = this.clearData.bind(this)
     }
-
+    /* Loads groceries when page loads by calling getAllGroceries function */
     componentDidMount() {
         console.log(this)
         this.getAllGroceries();
     }
 
+    /* Function to lookup all groceries, includes credentials for user authentication */
     getAllGroceries() {
         fetch(`/api/groceries` , { credentials: 'include' })
         .then(res => res.json())
@@ -35,6 +36,7 @@ class GroceryController extends React.Component {
         .catch(err => console.log(err))
     }
 
+    /* Function to lookup individual grocery item, includes credentials for user authentication */
     getGrocery(id, view) {
         fetch(`/api/groceries/${id}` , { credentials: 'include' })
         .then(res => res.json())

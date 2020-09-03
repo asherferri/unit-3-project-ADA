@@ -7,6 +7,7 @@ const Header = (props) => {
             <nav className="main-nav">
                 <div className="logo">Logo</div>
                 <ul>
+                    {/* Determines link path to use, App handles routing */}
                     <li><Link to="/groceries">Groceries</Link></li>
                     <li><Link to="/about">About</Link></li>
                     <li className="logout" onClick={() => props.logout()}><Link to="/logout">Logout</Link></li>
