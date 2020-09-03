@@ -34,7 +34,7 @@ class FeatureWindow extends React.Component {
                 return (
                     <>
                         <GroceryItem key={this.props.grocery.id} grocery={this.props.grocery} handleFormSubmit={this.handleFormSubmit} getGrocery={this.props.getGrocery} /> 
-                        <SuggestedRecipe grocery={this.props.grocery}/>
+                        <SuggestedRecipe grocery={this.props.grocery} />
                     </>)
             case 'edit':
                 return <GroceryForm handleFormSubmit={this.handleFormSubmit} isAdd={false} grocery={this.props.grocery} />
