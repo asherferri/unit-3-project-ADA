@@ -63,15 +63,14 @@ class SuggestedRecipe extends Component {
           });
         })
 
-
         .catch((err) => console.log(err));
   }
 
   render() {
     return (
       <div className="feature-window">
-        <div>render() in SuggestedRecipe.jsx</div>
-
+        <button >Previous Recipe</button>
+        <button >Next Recipe</button>
         <div>{this.state.videoTitle}</div>
         <div>
           <img src={this.state.imageUrl} alt="food" />
