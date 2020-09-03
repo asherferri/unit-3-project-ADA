@@ -52,13 +52,18 @@ class SuggestedRecipe extends Component {
         .then((res) => {
           console.log("res");
           console.log(res);
+
+          const resultsWithSections = res.results.filter(el => 'sections' in el)
+          
           this.setState({
-            videoTitle: res.results[0].name,
-            ingredients: res.results[0].sections[0].components,
-            instructions: res.results[0].instructions,
-            imageUrl: res.results[0].thumbnail_url,
+            videoTitle: resultsWithSections[0].name,
+            ingredients: resultsWithSections[0].sections[0].components,
+            instructions: resultsWithSections[0].instructions,
+            imageUrl: resultsWithSections[0].thumbnail_url,
           });
         })
+
+
         .catch((err) => console.log(err));
   }
 
