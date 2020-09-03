@@ -48,8 +48,7 @@ class FeatureWindow extends React.Component {
           <div className="feature-window">
             <nav className="feature-nav">
                     <ul>
-                        <li>Add Groceries</li>
-                        <li>Find Recipes!</li>
+                        <li onClick={() => this.props.clear()}>Add Groceries</li>
                     </ul>
                 </nav>
                 <section className="feature-section">
