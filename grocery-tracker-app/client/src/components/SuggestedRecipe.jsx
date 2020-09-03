@@ -6,6 +6,7 @@ class SuggestedRecipe extends Component {
          super()
          this.state = {
              videoTitle: '',
+             ingredients: []
          }
      }
     
@@ -23,24 +24,36 @@ class SuggestedRecipe extends Component {
         .then(res => res.json())
         .then(res => {
             console.log(res.results[0].name)
+            console.log(res.results[0].sections[0].components);
+            console.log('res')
             console.log(res)
             this.setState({
-                videoTitle: res.results[0].name
+                videoTitle: res.results[0].name,
+                ingredients: res.results[0].sections[0].components
             })
             console.log(this.state.videoTitle);
-
+            // this.state.ingredients.map((ingredient, i) => {
+            //     console.log(`${i}. ${ingredient.raw_text}`);
+            // }) 
         })
         .catch(err => console.log(err))
+
+       
     }
   
     render() {
-    return (
-      <div className="feature-window">
-        <div>render() in SuggestedRecipe.jsx</div>
-        <div>Recipe suggestions</div>
-        <div>{this.state.videoTitle}</div>
-      </div>
-    );
+        return (
+          <div className="feature-window">
+            <div>render() in SuggestedRecipe.jsx</div>
+            
+            <div>{this.state.videoTitle}</div>
+            <div className="ingredients">
+                {this.state.ingredients.map((ingredient, i) => (
+                    <div key={i}>{`• ${ingredient.raw_text}`}</div>
+                ))}
+            </div>
+          </div>
+        )
   }
 }
 
