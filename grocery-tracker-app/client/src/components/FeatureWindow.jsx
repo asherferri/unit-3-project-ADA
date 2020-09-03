@@ -31,7 +31,11 @@ class FeatureWindow extends React.Component {
     renderFeatureWindow() {
         switch(this.props.viewType) {
             case 'view':
-                return <GroceryItem key={this.props.grocery.id} grocery={this.props.grocery} handleFormSubmit={this.handleFormSubmit} getGrocery={this.props.getGrocery} />
+                return (
+                    <>
+                        <GroceryItem key={this.props.grocery.id} grocery={this.props.grocery} handleFormSubmit={this.handleFormSubmit} getGrocery={this.props.getGrocery} /> 
+                        <SuggestedRecipe grocery={this.props.grocery}/>
+                    </>)
             case 'edit':
                 return <GroceryForm handleFormSubmit={this.handleFormSubmit} isAdd={false} grocery={this.props.grocery} />
             default:
@@ -52,7 +56,6 @@ class FeatureWindow extends React.Component {
                     { this.renderFeatureWindow() }
                 </section>
             <div>render() in GroveryController.jsx</div>
-            <div><SuggestedRecipe /></div>
           </div>
         );
     }
