@@ -210,9 +210,14 @@ nav {
   /* padding: 2px; */
 }
 
-.item-button span {
+.item-button span{
   background-color: rgb(163, 163, 163);
   padding: 2px;
   border-radius: 5px;
 }
 /* Grocerie List Page E =========================================> ᕦ(ò_óˇ)ᕤ */
+
+.update-show-item, .delete-show-item {
+  color: brown;
+  margin: 7px;
+}

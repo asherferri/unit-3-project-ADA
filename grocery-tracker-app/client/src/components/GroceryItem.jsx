@@ -15,9 +15,9 @@ const GroceryItem = (props) => {
             </div>
             <div className="item-button">
                 {/* Sending ID back up to GroceryController to lookup single grocery to make edits */}
-                <span onClick={() => props.getGrocery(props.grocery.id, 'edit')}>Update</span>
+                <span className="update-show-item" onClick={() => props.getGrocery(props.grocery.id, 'edit')}>Update</span>
                 {/* Sending ID back up to FeatureWindow to handle deleting grocery from db */}
-                <span onClick={(evt) => props.handleFormSubmit('DELETE', evt, props.grocery, props.grocery.id)} >Delete</span>
+                <span className="delete-show-item" onClick={(evt) => props.handleFormSubmit('DELETE', evt, props.grocery, props.grocery.id)} >Delete</span>
             </div>
         </div>
     )
