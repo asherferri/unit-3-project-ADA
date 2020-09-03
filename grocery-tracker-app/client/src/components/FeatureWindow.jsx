@@ -54,7 +54,6 @@ class FeatureWindow extends React.Component {
                 <section className="feature-section">
                     { this.renderFeatureWindow() }
                 </section>
-            <div>render() in GroveryController.jsx</div>
           </div>
         );
     }
