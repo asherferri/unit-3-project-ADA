@@ -4,7 +4,7 @@ import Moment from 'moment';
 const GroceryItem = (props) => {
     return (
         <div className="grocery-item-container">
-            <div className="grocery-item">
+            <div className=".grcry-item-feat">
                 <h3>{props.grocery.name}</h3>
                 {/* Using moment to format date */}
                 <p>Last Purchased: {Moment(props.grocery.last_purchased_date, "dddd, MMMM Do, YYYY").format("M/D/YYYY")}</p> 
