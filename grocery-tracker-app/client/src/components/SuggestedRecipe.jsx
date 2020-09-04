@@ -9,6 +9,8 @@ class SuggestedRecipe extends Component {
       ingredients: [],
       instructions: [],
       imageUrl: "",
+      searchResults: [],
+      currentRecipeIndex: 0
     };
   }
 
@@ -56,21 +58,33 @@ class SuggestedRecipe extends Component {
           const resultsWithSections = res.results.filter(el => 'sections' in el)
           
           this.setState({
-            videoTitle: resultsWithSections[0].name,
-            ingredients: resultsWithSections[0].sections[0].components,
-            instructions: resultsWithSections[0].instructions,
-            imageUrl: resultsWithSections[0].thumbnail_url,
+            videoTitle: resultsWithSections[this.state.currentRecipeIndex].name,
+            ingredients:
+              resultsWithSections[this.state.currentRecipeIndex].sections[0]
+                .components,
+            instructions:
+              resultsWithSections[this.state.currentRecipeIndex].instructions,
+            imageUrl:
+              resultsWithSections[this.state.currentRecipeIndex].thumbnail_url,
+            searchResults: resultsWithSections,
+            currentRecipeIndex: 
           });
         })
-
         .catch((err) => console.log(err));
+  }
+
+  getNextRecipe() {
+    this.setState({
+      currentRecipeIndex: 1
+    })
+
   }
 
   render() {
     return (
       <div className="feature-window">
-        <button >Previous Recipe</button>
-        <button >Next Recipe</button>
+        <button>Previous Recipe</button>
+        <button onClick={this.getNextRecipe}>Next Recipe</button>
         <div>{this.state.videoTitle}</div>
         <div>
           <img src={this.state.imageUrl} alt="food" />
