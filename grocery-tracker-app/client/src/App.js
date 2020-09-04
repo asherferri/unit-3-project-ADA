@@ -92,6 +92,8 @@ class App extends React.Component {
       })
     })
     .catch(err => console.log(err))
+    localStorage.setItem('cG', null);
+    localStorage.setItem('vT', null );
   }
 
   render() {
