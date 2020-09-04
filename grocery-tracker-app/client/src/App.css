@@ -208,8 +208,7 @@ nav {
   overflow: hidden;
 }
 .grocery-item-container:hover {
-  box-shadow: 0px 0px 2px white;
-  
+  box-shadow: 0px 0px 2px white;  
 }
 
 .grocery-item-lst {
@@ -397,11 +396,12 @@ p.feat-last {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  /* max-width: 500px;
-  width: 50vw;
-  height: 70vh; */
-  overflow: auto;
+  transition: box-shadow 1s;
 }
+.login-container:hover {
+  box-shadow: 0px 0px 2px white;  
+}
+
 .item-login {
   padding: 0.5vw;
 }
@@ -415,14 +415,18 @@ p.feat-last {
   border-radius: 7px;
   text-align: center;
   padding: 1vw;
-  /* display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  max-width: 500px;
-  width: 50vw;
-  height: 70vh; */
-  overflow: auto;
+  transition: box-shadow 1s;
+}
+.register-container:hover {
+  box-shadow: 0px 0px 2px white;  
+}
+
+.item-register {
+  padding: 0.5vw;
 }
 /* Register Window Page E =========================================> ᕦ(ò_óˇ)ᕤ */
 
