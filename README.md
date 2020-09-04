@@ -70,6 +70,12 @@ or needs to refill based on estimated consumption times (added by user).
 - The Google and it's capacity to develop our Googliness.
 - BH brain capacity, time management, and a shton of GIFD.
 
+### The Beginning...
+
+![Wireframe](./resources/homeOld.jpg)
+![Wireframe](./resources/groceryOld.jpg)
+
+
 ## Dependencies used
 
    "bcryptjs": "^2.4.3",
