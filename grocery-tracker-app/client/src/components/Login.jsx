@@ -22,14 +22,22 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div className="login">
-                {/* Sends login information back up to App */}
-                <form onSubmit={(e) => this.props.handleLoginSubmit(e, this.state)}>
-                    <input type="text" name="username" value={this.state.username} placeholder="username" onChange={this.handleInputChange} />
-                    <input type="password" name="password" value={this.state.password} placeholder="password" onChange={this.handleInputChange} />
-                    <input type="submit" value="Login" />
-                </form>
-                <p>Not a member?  Sign up <Link to="/register"><span className="register-link">here</span></Link></p>
+           <div className="login-container">
+                <div className="login">
+                    {/* Sends login information back up to App */}
+                    <form onSubmit={(e) => this.props.handleLoginSubmit(e, this.state)}>
+                        <div className="item-login">
+                            <input type="text" name="username" value={this.state.username} placeholder="username" onChange={this.handleInputChange} />
+                        </div>
+                        <div className="item-login">    
+                            <input type="password" name="password" value={this.state.password} placeholder="password" onChange={this.handleInputChange} />
+                        </div>
+                        <div className="item-login">
+                            <input type="submit" value="Login" />
+                        </div>
+                    </form>
+                    <p>Not a member?  Sign up <Link to="/register"><span className="register-link">here</span></Link></p>
+                </div>
             </div>
         )
     }

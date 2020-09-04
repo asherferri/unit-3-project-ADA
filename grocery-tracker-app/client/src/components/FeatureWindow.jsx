@@ -46,11 +46,10 @@ class FeatureWindow extends React.Component {
     render() {
         return (
           <div className="feature-window">
-            <nav className="feature-nav">
-                    <ul>
-                        <li onClick={() => this.props.clear()}>Add Groceries</li>
-                    </ul>
-                </nav>
+            <nav className="feature-nav">           
+                {/* button on top of Featured container */}
+                <div className="add-G-Button" onClick={() => this.props.clear()}>Add Groceries</div>
+            </nav>
                 <section className="feature-section">
                     { this.renderFeatureWindow() }
                 </section>

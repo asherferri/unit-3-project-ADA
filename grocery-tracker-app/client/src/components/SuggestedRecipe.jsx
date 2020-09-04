@@ -68,23 +68,29 @@ class SuggestedRecipe extends Component {
 
   render() {
     return (
-      <div className="feature-window">
-        <button >Previous Recipe</button>
-        <button >Next Recipe</button>
-        <div>{this.state.videoTitle}</div>
+      <div className="">
+      <div className="recipe-container">
+        {/* <button >Previous Recipe</button>
+        <button >Next Recipe</button> */}
+        <div className="recipe-title">{this.state.videoTitle}</div>
         <div>
-          <img src={this.state.imageUrl} alt="food" />
+          <img className="recipe-image" src={this.state.imageUrl} alt="food" />
         </div>
-        <div className="ingredients">
+      </div>
+      <div className="recipe-container">
+        <div className="ingredients"> <h3>Ingredients:</h3>
           {this.state.ingredients.map((ingredient, i) => (
             <div key={i}>{`• ${ingredient.raw_text}`}</div>
           ))}
         </div>
-        <div className="instructions">
+      </div>
+      <div className="recipe-container">
+        <div className="instructions"> <h3>Preparation:</h3>
           {this.state.instructions.map((instructions, i) => (
             <div key={i}>{`${i + 1}. ${instructions.display_text}`}</div>
           ))}
         </div>
+      </div>
       </div>
     );
   }
