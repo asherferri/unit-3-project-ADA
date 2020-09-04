@@ -385,6 +385,46 @@ p.feat-last {
 
 /* Featured Window Page E =========================================> ᕦ(ò_óˇ)ᕤ */
 
+/* Login Window Page B =========================================> ᕦ(ò_óˇ)ᕤ */
+.login-container {
+  /* background: rgba(0, 0, 0, 0.5); */
+  box-shadow: 2px 2px 7px black;
+  background-color: rgba(132, 204, 198, 0.9);
+  border-radius: 7px;
+  text-align: center;
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  /* max-width: 500px;
+  width: 50vw;
+  height: 70vh; */
+  overflow: auto;
+}
+.item-login {
+  padding: 0.5vw;
+}
+/* Login Window Page E =========================================> ᕦ(ò_óˇ)ᕤ */
+
+/* Register Window Page B =========================================> ᕦ(ò_óˇ)ᕤ */
+.register-container {
+  /* background: rgba(0, 0, 0, 0.5); */
+  box-shadow: 2px 2px 7px black;
+  background-color: rgba(132, 204, 198, 0.9);
+  border-radius: 7px;
+  text-align: center;
+  padding: 1vw;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 500px;
+  width: 50vw;
+  height: 70vh; */
+  overflow: auto;
+}
+/* Register Window Page E =========================================> ᕦ(ò_óˇ)ᕤ */
 
 /* About Window Page B =========================================> ᕦ(ò_óˇ)ᕤ */
 .about-us {
