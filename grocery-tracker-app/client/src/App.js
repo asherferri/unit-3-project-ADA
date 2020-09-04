@@ -100,7 +100,7 @@ class App extends React.Component {
       return (
       <BrowserRouter>
         <div className="grocery-app-container">
-          <Header logout={this.logout} />
+          <Header logout={this.logout} user={this.state.user}/>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" render={ () => (
               this.state.auth
