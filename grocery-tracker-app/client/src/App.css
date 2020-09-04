@@ -235,7 +235,7 @@ nav {
   font-size: 1.5vw;
   color: white;
   overflow: hidden;
-  
+
 }
 /* Grocerie List Page E =========================================> ᕦ(ò_óˇ)ᕤ */
 
@@ -374,6 +374,7 @@ p.feat-last {
 
 .recipe-image {
   max-width: 100%;
+  
 }
 
 .ingredients, .instructions {
