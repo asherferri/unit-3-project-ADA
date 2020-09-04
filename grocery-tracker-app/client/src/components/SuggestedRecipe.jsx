@@ -66,25 +66,17 @@ class SuggestedRecipe extends Component {
               resultsWithSections[this.state.currentRecipeIndex].instructions,
             imageUrl:
               resultsWithSections[this.state.currentRecipeIndex].thumbnail_url,
-            searchResults: resultsWithSections,
-            currentRecipeIndex: 
+            searchResults: resultsWithSections
           });
         })
         .catch((err) => console.log(err));
-  }
-
-  getNextRecipe() {
-    this.setState({
-      currentRecipeIndex: 1
-    })
-
   }
 
   render() {
     return (
       <div className="feature-window">
         <button>Previous Recipe</button>
-        <button onClick={this.getNextRecipe}>Next Recipe</button>
+        <button>Next Recipe</button>
         <div>{this.state.videoTitle}</div>
         <div>
           <img src={this.state.imageUrl} alt="food" />

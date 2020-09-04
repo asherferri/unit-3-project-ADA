@@ -24,7 +24,6 @@ a {
 }
 
 /* Header n Footer B =================================> ᕦ(ò_óˇ)ᕤ */
-/* Header */
 header {
   display: block;
   position: fixed;
@@ -124,7 +123,7 @@ nav {
 }
 .login-home, .register-home {
   box-shadow: 2px 2px 5px black;
-  border-radius: 10px;
+  border-radius: 7px;
   background: rgb(184, 241, 255);
   color: rgb(0, 0, 0);
   text-align: center;
@@ -168,8 +167,8 @@ nav {
 .register-link {
   text-decoration: underline;
 }
+
 /* Grocerie List Page B =========================================> ᕦ(ò_óˇ)ᕤ */
-/* Grocery App Content */
 .controller-container {
   display: flex;
   flex-direction: row;
@@ -195,19 +194,119 @@ nav {
 }
 
 .grocery-item-container {
-  margin: 0.5vw;
+  margin: 1vw;
   border-radius: 7px;
-  background-color: rgba(100,100,100,1);
+  background-color: rgb(123, 121, 121);
+  /* background-color: rgb(169, 168, 168); */
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-end;
   border-bottom: 1px solid black;
   box-shadow: 1px 1px 7px black;
+  transition: box-shadow 1s;
+  overflow: hidden;
+}
+.grocery-item-container:hover {
+  box-shadow: 0px 0px 2px white;  
 }
 
-.grocery-item {
-  background-color: mediumaquamarine;
+.grocery-item-lst {
+  /* background-color: pink; */
+  font-size: 1.5vw;
   /* padding: 2px; */
+}
+
+.list-name {
+  color:white;
+}
+
+.list-date {
+  padding: 3px;
+  border-radius: 4px;
+  border: 1px;
+  border-color: rgba(255, 255, 255, 0.5);
+  border-style: solid;
+  color: rgba(100, 100, 100, 1);
+  transition: font-size 1s, color 1s;
+  text-shadow: 0px 0px 10px white;
+}
+.list-date:hover {
+  font-size: 1.5vw;
+  color: white;
+  overflow: hidden;
+}
+/* Grocerie List Page E =========================================> ᕦ(ò_óˇ)ᕤ */
+
+/* Featured Window Page B =========================================> ᕦ(ò_óˇ)ᕤ */
+.feature-window {
+  box-shadow: 2px 2px 7px black;
+  background-color: rgba(132, 204, 198, 0.9);
+  border-radius: 10px;
+  width: 40vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  /* padding: 10px; */
+  /* margin: 0 10px; */
+  /* background-color: khaki; */
+  /* border-radius: 10px; */
+  overflow-x: hidden;
+}
+
+.grocery-item-container {
+  margin: 1vw;
+  border-radius: 7px;
+  background-color: rgb(123, 121, 121);
+  /* background-color: rgb(169, 168, 168); */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+  border-bottom: 1px solid black;
+  box-shadow: 1px 1px 7px black;
+  transition: box-shadow 1s;
+  overflow: hidden;
+}
+.grocery-item-container:hover {
+  box-shadow: 0px 0px 2px white; 
+}
+
+.add-G-Button {
+  /* box-shadow: 2px 2px 5px black; */
+  border-radius: 7px;
+  background: rgb(184, 241, 255);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-weight: 100;
+  padding: 1px;
+  margin: 10px;
+  width: 10vw;
+  height: 25px;
+  overflow: hidden;
+  transition: color 1s, box-shadow 1s;
+}
+.add-G-Button:hover {
+  color: white;
+  box-shadow: 2px 2px 4px rgb(0, 0, 0);
+  /* text-shadow: 2px 2px 4px rgb(0, 0, 0); */
+}
+
+p.feat-last {
+  padding: 3px;
+  border-radius: 4px;
+  border: 1px;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-style: solid;
+  color: rgb(52, 52, 52);
+  transition: font-size 1s, color 1s;
+  text-shadow: 0px 0px 10px white;
+}
+.feat-last:hover {
+  font-size: 1.5vw;
+  color: white;
+  overflow: hidden;
 }
 
 .item-button span{
@@ -215,9 +314,166 @@ nav {
   padding: 2px;
   border-radius: 5px;
 }
-/* Grocerie List Page E =========================================> ᕦ(ò_óˇ)ᕤ */
 
 .update-show-item, .delete-show-item {
   color: brown;
-  margin: 7px;
+  margin: 1vw;
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 7px;
+  background: rgb(184, 241, 255);
+  text-align: center;
+  font-weight: 100;
+  padding: 1px;
+  margin: 10px;
+  width: 5vw;
+  height: 25px;
+  overflow: hidden;
+  transition: color 1s, box-shadow 1s, background 1s;
 }
+.update-show-item:hover {
+  color: white;
+  box-shadow: 2px 2px 4px rgb(0, 0, 0);
+  /* text-shadow: 2px 2px 4px rgb(0, 0, 0); */
+}
+.delete-show-item:hover {
+  color: white;
+  background: rgb(235, 5, 5);
+  box-shadow: 2px 2px 4px rgb(0, 0, 0);
+  /* text-shadow: 2px 2px 4px rgb(0, 0, 0); */
+}
+
+
+.recipe-container {
+  margin: 1vw;
+  border-radius: 7px;
+  background-color: rgb(123, 121, 121);
+  /* background-color: rgb(169, 168, 168); */
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end; */
+  border-bottom: 1px solid black;
+  box-shadow: 1px 1px 7px black;
+  transition: box-shadow 1s;
+  overflow: hidden;
+}
+.recipe-container:hover {
+  box-shadow: 0px 0px 2px white; 
+}
+
+.recipe-title {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 1.5vw;
+  background: rgb(6, 160, 171);
+  padding: .5vw;
+}
+
+.recipe-image {
+  max-width: 100%;
+}
+
+.ingredients, .instructions {
+  line-height: 1.5em;
+  margin: 1vw;
+  color: white;
+}
+
+
+/* Featured Window Page E =========================================> ᕦ(ò_óˇ)ᕤ */
+
+/* Add Grocery/Update Form B ======================================> ᕦ(ò_óˇ)ᕤ */
+
+.grocery-form {
+  /* background: rgba(0, 0, 0, 0.5); */
+  box-shadow: 2px 2px 7px black;
+  background-color: rgb(198, 87, 56);
+  border-radius: 7px;
+  text-align: center;
+  padding: 1vw;
+  /* display: flex; */
+  /* flex-direction: column; */
+  
+  /* align-items: center; */
+  color: aliceblue;
+  transition: box-shadow 1s;
+  justify-content: space-between;
+}
+.grocery-form :hover {
+  box-shadow: 0px 0px 2px white;  
+}
+
+.item-g-form {
+  padding: 0.1vw;
+  /* background: red; */
+}
+
+/* Add Grocery/Update Form B ======================================> ᕦ(ò_óˇ)ᕤ */
+
+/* Login Window Page B =========================================> ᕦ(ò_óˇ)ᕤ */
+.login-container {
+  /* background: rgba(0, 0, 0, 0.5); */
+  box-shadow: 2px 2px 7px black;
+  background-color: rgba(132, 204, 198, 0.9);
+  border-radius: 7px;
+  text-align: center;
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transition: box-shadow 1s;
+}
+.login-container:hover {
+  box-shadow: 0px 0px 2px white;  
+}
+
+.item-login {
+  padding: 0.5vw;
+}
+/* Login Window Page E =========================================> ᕦ(ò_óˇ)ᕤ */
+
+/* Register Window Page B =========================================> ᕦ(ò_óˇ)ᕤ */
+.register-container {
+  /* background: rgba(0, 0, 0, 0.5); */
+  box-shadow: 2px 2px 7px black;
+  background-color: rgba(132, 204, 198, 0.9);
+  border-radius: 7px;
+  text-align: center;
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transition: box-shadow 1s;
+}
+.register-container:hover {
+  box-shadow: 0px 0px 2px white;  
+}
+
+.item-register {
+  padding: 0.5vw;
+}
+/* Register Window Page E =========================================> ᕦ(ò_óˇ)ᕤ */
+
+/* About Window Page B =========================================> ᕦ(ò_óˇ)ᕤ */
+.about-us {
+  /* background: rgba(0, 0, 0, 0.5); */
+  box-shadow: 2px 2px 7px black;
+  background-color: rgba(132, 204, 198, 0.9);
+  border-radius: 7px;
+  text-align: center;
+  padding: 1vw;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 500px;
+  width: 50vw;
+  height: 70vh; */
+  overflow: auto;
+}
+/* About Window Page E =========================================> ᕦ(ò_óˇ)ᕤ */
+

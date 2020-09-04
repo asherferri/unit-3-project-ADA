@@ -44,7 +44,7 @@ app.use(passport.session())
 
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
-    console.log(`Listening Seele Brennt - By Einstürzende Neubauten on port ${PORT}`)
+    console.log(`Listening Unleash The Bastards - By Municipal Waste on port ${PORT}`)
 })
 
 app.get('/', (req, res) => {
