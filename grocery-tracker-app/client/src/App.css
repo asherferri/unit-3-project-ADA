@@ -123,7 +123,7 @@ nav {
 }
 .login-home, .register-home {
   box-shadow: 2px 2px 5px black;
-  border-radius: 10px;
+  border-radius: 7px;
   background: rgb(184, 241, 255);
   color: rgb(0, 0, 0);
   text-align: center;
@@ -383,6 +383,34 @@ p.feat-last {
 
 
 /* Featured Window Page E =========================================> ᕦ(ò_óˇ)ᕤ */
+
+/* Add Grocery/Update Form B ======================================> ᕦ(ò_óˇ)ᕤ */
+
+.grocery-form {
+  /* background: rgba(0, 0, 0, 0.5); */
+  box-shadow: 2px 2px 7px black;
+  background-color: rgb(198, 87, 56);
+  border-radius: 7px;
+  text-align: center;
+  padding: 1vw;
+  /* display: flex; */
+  /* flex-direction: column; */
+  
+  /* align-items: center; */
+  color: aliceblue;
+  transition: box-shadow 1s;
+  justify-content: space-between;
+}
+.grocery-form :hover {
+  box-shadow: 0px 0px 2px white;  
+}
+
+.item-g-form {
+  padding: 0.1vw;
+  /* background: red; */
+}
+
+/* Add Grocery/Update Form B ======================================> ᕦ(ò_óˇ)ᕤ */
 
 /* Login Window Page B =========================================> ᕦ(ò_óˇ)ᕤ */
 .login-container {

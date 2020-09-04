@@ -32,25 +32,27 @@ class GroceryForm extends React.Component {
 
     render() {
         return (
+            <div className="recipe-container">
             <div className="grocery-form">
                 {/* If the isAdd props is true, send back form data to create new grocery item in db, else update existing grocery item, sends info back up to FeatureWindow */}
                 <form onSubmit={this.props.isAdd === true 
                         ? (evt) => this.props.handleFormSubmit('POST', evt, this.state)
                         : (evt) => this.props.handleFormSubmit('PUT', evt, this.state, this.props.grocery.id)} >
-                    <div>
+                    <div className="item-g-form">
                         <label>Grocery Item Name:</label>
                         <input type="text" name="name" placeholder="grocery item" value={this.state.name} onChange={this.handleChange} />
                     </div>
-                    <div>
+                    <div className="item-g-form">
                         <label>Shopping Recurrence:</label>
                         <input type="number" name="recurrence" value={this.state.recurrence} onChange={this.handleChange} />
                     </div>
-                    <div>
+                    <div className="item-g-form">
                         <label>Last Purchased Date:</label>
                         <input type="date" name="last_purchased_date" value={this.state.last_purchased_date} onChange={this.handleChange} />
                     </div>
                     <input type="submit" value="Submit" />
                 </form>
+            </div>
             </div>
         )
     }
