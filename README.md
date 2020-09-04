@@ -17,7 +17,7 @@ or needs to refill based on estimated consumption times (added by user).
 
 ### Wireframes!
 
-![Wireframe](./resources/wireframe.png)
+![Wireframe](./resources/final_wireframe.png)
 
 ### User Stories
 
@@ -69,3 +69,22 @@ or needs to refill based on estimated consumption times (added by user).
 - CSS + HTML / JS and Jquery books.
 - The Google and it's capacity to develop our Googliness.
 - BH brain capacity, time management, and a shton of GIFD.
+
+## Dependencies used
+
+   "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "method-override": "^3.0.0",
+    "moment": "^2.27.0",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "pg-promise": "^10.5.8"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3"
