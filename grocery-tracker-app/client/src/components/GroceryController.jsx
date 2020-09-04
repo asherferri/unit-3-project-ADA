@@ -41,7 +41,7 @@ class GroceryController extends React.Component {
 
     /* Function to lookup individual grocery item, includes credentials for user authentication */
     getGrocery(id, view) {
-        fetch(`/api/groceries/${id}` , { credentials: 'include' })
+        fetch(`/api/groceries/${id || '' }` , { credentials: 'include' })
         .then(res => res.json())
         .then(res => {
             this.setState({
