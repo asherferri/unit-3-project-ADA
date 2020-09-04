@@ -20,9 +20,9 @@ class GroceryController extends React.Component {
     componentDidMount() {
         // console.log(this)
         this.getAllGroceries();
-        // if (localStorage.getItem('cG') != null && localStorage.getItem('vT') != null) {
-        //     this.getGrocery(parseInt(localStorage.getItem('cG')), localStorage.getItem('vT'))
-        // }
+        if (localStorage.getItem('cG') !== 'null' && localStorage.getItem('vT') !== 'null') {
+            this.getGrocery(parseInt(localStorage.getItem('cG')), localStorage.getItem('vT'))
+        }
     }
 
     /* Function to lookup all groceries, includes credentials for user authentication */
